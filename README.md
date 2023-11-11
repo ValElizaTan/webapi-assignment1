@@ -3,19 +3,28 @@
 ## Name: Valerie Tan
 
 ### About this Node Module
-This module is a simple Movie infomation system. It displays 6 functions, `Search`, `Update`, `Calculate price of Ticket`, `Rating of Movie`, `Adding of Movie` and `Availability of booking seat`,
+- This module is a simple Movie infomation system. 
+- It displays 6 functions: `Search Movie`, `Update Time`, `Calculate price of Ticket`, `Rating of Movie`, `Adding of Movie` and `Availability of booking seat`.
+- *Explanation of the console log for testing:* <br />
+the console logs are used to call upon the functions in the node module and display the output of the functions in the terminal.
+
+- **Do not touch anything in the db or module.exports**
 
 ### How to use
->User inputs are e.g "console.log("Search Movie: " + movie.searchMovie(**_"jumanji"_**));".
+here are some examples on how to use them for testing:
 
-> Functions of `Search`, `Update`, `Calculate price of Ticket`, `Rating of Movie` user input can only be chosen from the database above.
+>User inputs are e.g "console.log("Search Movie: " + movie.searchMovie(**_"jumanji"_**));" <br />
+**_jumanji_** can be changed to any movie name and the input will be searched in the database.
 
+> Functions of `Search Movie`, `Update Time`, `Calculate price of Ticket` & `Rating of Movie` user input of names/type of ticket can only be chosen from the database above.
 
+>Calling of functions uses the terminal by
+    <br />
+    - Right-click the file
+    <br />
+    - Open in integrated terminal
+    <br />
+    - Type _"node Valerie_Movie.js"_
+    <br />
+    - Enter
 
-You will only need one file, ie, your node module, for this assignment.
-
-In this readme file, describe how to use your node module. It could be similar to **app.js** from Lab2, where you call some functions in your node module and display the output. Describe how to setup your node module, if any. Describe how to call the functions, what parameters required and so on.
-
-You can press **Ctrl+Shift+V** in this file in Visual Studio Code to see a live preview of the readme file.
-
-For some tips in formatting text in readme file, refer to https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax

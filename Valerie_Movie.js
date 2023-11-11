@@ -4,6 +4,11 @@ const database = [
     { title: 'Cinderella', year: 2021, time: '13:00', rating: 4.4 },
     { title: 'Enola Holmes 2', year: 2022, time: '17:00', rating: 6.8 },
     { title: 'Red White & Royal Blue', year: 2023, time: '14:00', rating: 7 },
+    { title: 'The Nun', year: 2018, time: '03:00', rating: 5.3 },
+    { title: 'Oppenheimer', year: 2023, time: '10:00', rating: 8.5 },
+    { title: 'Harry Potter and the Sorcerer Stone', year: 2001, time: '18:00', rating: 7.6 },
+    { title: 'Doctor Sleep', year: 2019, time: '12:00', rating: 7.3 },
+    { title: 'Barbie', year: 2023, time: '16:00', rating: 7 },
 ];
 
 const ticket = [
@@ -30,10 +35,14 @@ module.exports = {
     },
 
     // This function updates the movie timings
-    updateMovie(index, newTime) {
+    updateTime(index, newTime) {
         const movie = database.find(movie => movie.title.toLowerCase().includes(index.toLowerCase()));
-        if (movie) {
+        const timePattern = /^([0-1][0-9]|2[0-3]):([0-5][0-9])$/;
+        if (movie && timePattern.test(newTime)) {
             movie.time = newTime;
+        }
+        else {
+            return "Invalid Timing";
         }
         return movie;
     },
@@ -60,18 +69,6 @@ module.exports = {
         }
     },
 
-    // This function checks the availability of the booking of seats
-    bookSeat(seats, row, number) {
-        const seatIndex = seats.findIndex(seat => seat.row === row && seat.number === number);
-
-        if (seatIndex == -1) {
-            seats.push({ row: row, number: number });
-            console.log(`Seat ${row}${number} has been successfully booked.`);
-        } else {
-            console.log(`Seat ${row}${number} is already booked.`);
-        }
-    },
-
     // This function adds new Movie
     addMovie(name, year, timing, rating) {
         const movie = { 'name': name, 'year': year, 'time': timing, 'rating': rating };
@@ -79,20 +76,32 @@ module.exports = {
         return movie;
     },
 
+    // This function checks the availability of the booking of seats
+    bookSeat(seats, row, number) {
+        const seatIndex = seats.findIndex(seat => seat.row === row && seat.number === number);
+
+        if (seatIndex == -1) {
+            seats.push({ row: row, number: number });
+            return `Seat ${row}${number} has been successfully booked.`;
+        } else {
+            return `Seat ${row}${number} is already booked.`;
+        }
+    },
+
 }
 
 const movie = require('./Valerie_Movie.js');
 //Search for Movie
-console.log("Search Movie: " + movie.searchMovie("jumanji")); // input from only movies in db
+console.log("Search Movie: " + movie.searchMovie("Harry")); // input from only movies in db
 
 //Updates Movie Time
-console.log(movie.updateMovie("Cinderella", "12:00")); //input from only movies in db | timing can vary
+console.log(movie.updateTime("Red White & Royal Blue", "12:00")); //input from only movies in db | timing can vary
 
 //calculate price base on type of ticket
-console.log("Total Price: " + movie.getTicketPrice('gold class', 6)); // input from only ticket type in db | amount can vary
+console.log("Total Price: " + movie.getTicketPrice('gold class', 3)); // input from only ticket type in db | amount can vary
 
 //Get Rating of the Movie
-console.log("Rating of selected movie: " + movie.getRating("red")); // input from only movies in db
+console.log("Rating of selected movie: " + movie.getRating("the nun")); // input from only movies in db
 
 //Adds new Movie
 console.log(movie.addMovie("The Shining", '1980', '02:00', '8.4'));
