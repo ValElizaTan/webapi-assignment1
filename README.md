@@ -1,5 +1,17 @@
 # Assignment 1
 
+## Name: Valerie Tan
+
+### About this Node Module
+This module is a simple Movie infomation system. It displays 6 functions, `Search`, `Update`, `Calculate price of Ticket`, `Rating of Movie`, `Adding of Movie` and `Availability of booking seat`,
+
+### How to use
+>User inputs are e.g "console.log("Search Movie: " + movie.searchMovie(**_"jumanji"_**));".
+
+> Functions of `Search`, `Update`, `Calculate price of Ticket`, `Rating of Movie` user input can only be chosen from the database above.
+
+
+
 You will only need one file, ie, your node module, for this assignment.
 
 In this readme file, describe how to use your node module. It could be similar to **app.js** from Lab2, where you call some functions in your node module and display the output. Describe how to setup your node module, if any. Describe how to call the functions, what parameters required and so on.

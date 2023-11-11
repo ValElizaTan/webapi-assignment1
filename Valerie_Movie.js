@@ -83,16 +83,16 @@ module.exports = {
 
 const movie = require('./Valerie_Movie.js');
 //Search for Movie
-console.log("Seearch Movie: " + movie.searchMovie("jumanji"));
+console.log("Search Movie: " + movie.searchMovie("jumanji")); // input from only movies in db
 
 //Updates Movie Time
-console.log(movie.updateMovie("Cinderella", "12:00"));
+console.log(movie.updateMovie("Cinderella", "12:00")); //input from only movies in db | timing can vary
 
 //calculate price base on type of ticket
-console.log("Total Price: " + movie.getTicketPrice('gold class', 6));
+console.log("Total Price: " + movie.getTicketPrice('gold class', 6)); // input from only ticket type in db | amount can vary
 
 //Get Rating of the Movie
-console.log("Rating of selected movie: " + movie.getRating("red"));
+console.log("Rating of selected movie: " + movie.getRating("red")); // input from only movies in db
 
 //Adds new Movie
 console.log(movie.addMovie("The Shining", '1980', '02:00', '8.4'));
