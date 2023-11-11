@@ -38,7 +38,7 @@ module.exports = {
         return movie;
     },
 
-    // This function calculates the total price base on the type of ticket & quantity
+    // This function calculates the total price base on the type of ticket & quantity 
     getTicketPrice(name, quantity) {
         let totalPrice = 0;
         for (let a = 0; a < ticket.length; a++) {
