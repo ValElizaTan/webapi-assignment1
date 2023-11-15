@@ -13,12 +13,12 @@ the console logs are used to call upon the functions in the node module and disp
 ### How to use
 here are some examples on how to use them for testing:
 
->User inputs are e.g "console.log("Search Movie: " + movie.searchMovie(**_"jumanji"_**));" <br />
+- User inputs are e.g "console.log("Search Movie: " + movie.searchMovie(**_"jumanji"_**));" <br />
 **_jumanji_** can be changed to any movie name and the input will be searched in the database.
 
-> Functions of `Search Movie`, `Update Time`, `Calculate price of Ticket` & `Rating of Movie` user input of names/type of ticket can only be chosen from the database above.
+- Functions of `Search Movie`, `Update Time`, `Calculate price of Ticket` & `Rating of Movie` user input of names/type of ticket can only be chosen from the database above.
 
->Calling of functions uses the terminal by
+- Calling of functions uses the terminal by
     <br />
     - Right-click the file
     <br />
